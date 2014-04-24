@@ -18,6 +18,10 @@ subprojects {
     }
 }
 
+task check(dependsOn: [':library:check']) {
+
+}
+
 apply plugin: "sonar-runner"
 
 apply from: "checkstyle.gradle"
