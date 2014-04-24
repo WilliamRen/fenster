@@ -1,3 +1,7 @@
+dependencies {
+    compile 'com.novoda:notils:2.2.5'
+}
+
 apply plugin: 'android-library'
 
 android {
@@ -16,8 +20,4 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
-}
-
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
 }
