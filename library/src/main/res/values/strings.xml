@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">fenster</string>
+
+    <!-- VIDEO -->
+    <string name="play_error_message">Couldn\'t play back video.</string>
+    <string name="play_progressive_error_message">Couldn\'t play back video.</string>
+
 </resources>
