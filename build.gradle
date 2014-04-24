@@ -17,3 +17,24 @@ subprojects {
         maven { url "http://ci.novoda.com/maven/releases/" }
     }
 }
+
+apply plugin: "sonar-runner"
+
+apply from: "checkstyle.gradle"
+apply from: "pmd.gradle"
+apply from: "findbugs.gradle"
+
+sonarRunner {
+    sonarProperties {
+        property "sonar.host.url", "http://sonar.novoda.com"
+        property "sonar.jdbc.url", "jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true"
+        property "sonar.jdbc.driverClassName", "com.mysql.jdbc.Driver"
+        property "sonar.jdbc.username", "sonar_admin"
+        property "sonar.jdbc.password", "s0n4r_4dm1n"
+        property "sonar.branch", "master"
+        property "sonar.dynamicAnalysis", "true"
+        property "sonar.login", "sonar-report"
+        property "sonar.password", "sonar-report"
+        property "sonar.projectVersion", project(':library').android.defaultConfig.versionName
+    }
+}
